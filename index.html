@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPIDIA — L'Art du Web Haut de Gamme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: #185768;
+      }
+      ::selection {
+        background: #295d6a;
+        color: white;
+      }
+      .custom-navbar {
+        background-color: #ffffff;
+      }
+      .spidea-color {
+        color: #295d6a;
+      }
+      .accent-btn {
+        background-color: #295d6a;
+        color: white;
+      }
+      .accent-btn:hover {
+        background-color: #21474e;
+      }
+      .section-bg {
+        background-color: #185768;
+      }
+      .section-text {
+        color: #ffffff;
+      }
+
+      /* Styles améliorés */
+      .hero-section {
+        background: linear-gradient(135deg, #0c1d25 0%, #295d6a 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background-color: white;
+        color: #185768;
+        padding: 12px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .floating-element {
+        animation: float 6s infinite alternate ease-in-out;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .gradient-bg-2 {
+        background: linear-gradient(135deg, #f0f5f9 0%, #d1ecf9 100%);
+      }
+
+      .text-gradient {
+        background: linear-gradient(90deg, #185768 0%, #295d6a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .step-indicator {
+        background-color: #d1ecf9;
+        color: #185768;
+        padding: 12px;
+        border-radius: 50%;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-card {
+        background-color: #f9f9f9;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .faq-item {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
+      }
+
+      .faq-toggle {
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      .faq-toggle:hover {
+        background-color: #f0f5f9;
+      }
+
+      .faq-content {
+        background-color: #fff;
+      }
+
+      .portfolio-card {
+        background-color: #fff;
+      }
+    </style>
+
+    <style>
+      #whatsapp-submit:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    </style>
+
+    <style>
+      @keyframes fade-in-up {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 1s ease-out;
+      }
+    </style>
+
+  </head>
+  <body class="text-white">
+
+    <div id="scroll-progress"></div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <img src="logoo.png" alt="Logo SPIDIA" class="h-9 w-9 object-contain" />
+          <span class="text-2xl font-bold text-[#295d6a] tracking-tight">SPIDIA</span>
+        </div>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="#services" class="text-[#295d6a] hover:text-[#21474e]">Services</a>
+          <a href="#portfolio" class="text-[#295d6a] hover:text-[#21474e]">Réalisations</a>
+          <a href="#contact" class="text-[#295d6a] hover:text-[#21474e]">Contact</a>
+          <a href="#calculator" class="text-[#295d6a] hover:text-[#21474e]">Prix</a>
+        </nav>
+
+        <!-- Burger Button (Mobile Only) -->
+        <button id="burger-btn" class="md:hidden p-2 focus:outline-none">
+          <svg class="w-6 h-6 text-[#295d6a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white border-t">
+        <nav class="flex flex-col space-y-3 pt-2 text-center">
+          <a href="#services" class="text-[#295d6a]">Services</a>
+          <a href="#portfolio" class="text-[#295d6a]">Réalisations</a>
+          <a href="#contact" class="text-[#295d6a]">Contact</a>
+          <a href="#calculator" class="text-[#295d6a]">Prix</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Preloader (écran d’introduction) -->
+    <div id="preloader" class="fixed inset-0 bg-[#295d6a] flex items-center justify-center z-50 text-white text-2xl font-bold">
+      <div class="animate-fade-in-up text-center">
+        <p class="mb-2">SPIDIA</p>
+        <p class="text-sm font-light">Plus qu’une agence. Une expérience digitale sur mesure.</p>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section relative text-center py-32 px-6 overflow-hidden">
+      <!-- 3D Scene Container -->
+      <div class="absolute inset-0 perspective-1000">
+        <!-- 3D Geometric Elements -->
+        <div class="geometric-cube absolute top-20 left-10 transform-3d" data-aos="fade-in" data-aos-delay="300">
+          <div class="cube-face cube-front"></div>
+          <div class="cube-face cube-back"></div>
+          <div class="cube-face cube-right"></div>
+          <div class="cube-face cube-left"></div>
+          <div class="cube-face cube-top"></div>
+          <div class="cube-face cube-bottom"></div>
+        </div>
+
+        <!-- Floating Sphere -->
+        <div class="floating-sphere absolute top-32 right-16 w-24 h-24" data-aos="zoom-in" data-aos-delay="500"></div>
+
+        <!-- Abstract Shapes -->
+        <div class="abstract-triangle absolute bottom-20 left-20" data-aos="rotate-in" data-aos-delay="700"></div>
+        <div class="abstract-cylinder absolute top-16 right-32" data-aos="slide-up" data-aos-delay="400"></div>
+
+        <!-- Neon Frame -->
+        <div class="neon-frame absolute top-24 right-20" data-aos="glow-in" data-aos-delay="600">
+          <div class="neon-text">SPIDIA</div>
+        </div>
+      </div>
+
+      <div class="relative z-20 max-w-4xl mx-auto">
+        <h1 class="hero-title text-4xl md:text-7xl font-black text-white leading-tight mb-8 transform" data-aos="fade-up">
+          SPIDIA conçoit des expériences <br/>
+          <span id="dynamic-word" class="text-gradient-artistic">impactantes</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 font-light" data-aos="fade-up" data-aos-delay="100">
+          Créer. Inspirer. Impressionner. <br/>
+          Chez <span class="font-bold text-gradient-accent">SPIDIA</span>, nous sculptons des expériences digitales extraordinaires qui font vibrer votre marque.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
+          <a href="#contact" class="btn-3d-primary">
+            <span>Créons ensemble</span>
+            <div class="btn-3d-shadow"></div>
+          </a>
+          <a href="#portfolio" class="btn-glass">
+            Voir nos œuvres
+          </a>
+        </div>
+      </div>
+
+      <!-- Enhanced Decorative Elements -->
+      <div class="particles-container absolute inset-0 pointer-events-none">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+      </div>
+    </section>
+
+    
+    <!-- Section Processus -->
+    <section class="py-20 gradient-bg-2">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 text-gradient" data-aos="fade-up">Notre Processus</h2>
+        <div class="grid md:grid-cols-3 gap-12">
+          <!-- Étape 1 -->
+          <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="step-indicator">
+              <i class="fas fa-comments text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#185768] mb-2">Échange & brief</h3>
+            <p class="text-sm text-gray-600">On cerne vos besoins, vos inspirations, vos contraintes. Rien n'est laissé au hasard.</p>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="step-indicator">
+              <i class="fas fa-paint-brush text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#185768] mb-2">Design sur mesure</h3>
+            <p class="text-sm text-gray-600">On crée un design qui colle à votre univers et séduit vos clients. Élégant, rapide, unique.</p>
+          </div>
+
+          <!-- Étape 3 -->
+          <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-indicator">
+              <i class="fas fa-rocket text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#185768] mb-2">Livraison & accompagnement</h3>
+            <p class="text-sm text-gray-600">Une fois en ligne, on reste à vos côtés pour que votre site évolue avec vous.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- Pourquoi Spidia -->
+    <section id="why-spidia" class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-gray-50 rounded-2xl p-8 shadow-xl ring-1 ring-gray-200" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#295d6a] mb-6 text-center">
+            Pourquoi choisir SPIDIA, c’est faire le choix du sur-mesure
+          </h2>
+
+          <p class="text-gray-700 leading-relaxed text-[1.05rem] mb-6">
+            Un site web, c’est comme un costume. Vous pouvez l’acheter en série, mal ajusté, rêche au toucher et sans personnalité… ou le faire tailler par un couturier qui comprend votre style, vos mesures, votre image.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed text-[1.05rem] mb-6">
+            Chez <strong class="text-[#295d6a] font-semibold">SPIDIA</strong>, nous ne cousons pas des sites. Nous taillons des identités. Chaque pixel, chaque interaction, chaque ligne de code est ajustée comme la manche d’un blazer de luxe : avec précision, goût, et ambition.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed text-[1.05rem] mb-6">
+            Là où les autres agences vous facturent une fortune pour un costume mal coupé, SPIDIA vous propose le travail d’un <em>maître tailleur digital</em>… sans vous faire vendre votre chemise. Le style, la performance et la crédibilité — au bon prix.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed text-[1.05rem] mb-6">
+            Nos sites ne sont pas que beaux. Ils respirent la confiance. Ils rassurent vos clients, captent leur attention et convertissent vos visiteurs en acheteurs. Et voici ce que nous garantissons :
+          </p>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 mt-6">
+            <h3 class="text-xl font-semibold text-[#295d6a] mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-[#295d6a]" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 11c0-1.105.895-2 2-2s2 .895 2 2-2 4-2 4-2-2.895-2-4zM6 12h12M6 12a6 6 0 0112 0c0 3.314-2.686 6-6 6s-6-2.686-6-6z" />
+              </svg>
+              La Garantie SPIDIA
+            </h3>
+            <ul class="space-y-3 text-gray-700 text-[1.05rem]">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 mt-1 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5 13l4 4L19 7" />
+                </svg>
+                Un site qui reflète vraiment votre image, pas celle d’un template recyclé.
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 mt-1 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5 13l4 4L19 7" />
+                </svg>
+                Une performance optimisée dès le premier jour : rapidité, clarté, impact.
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 mt-1 text-green-600" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5 13l4 4L19 7" />
+                </svg>
+                Une qualité qui vous fera dire « j’aurais dû faire ça plus tôt ».
+              </li>
+              <li class="flex items-start gap-2">
+                Et si par miracle à la livraison, vous ne ressentez pas une fierté immédiate en montrant votre site… alors nous le réajustons gratuitement jusqu’à ce que ce soit le cas.
+              </li>
+
+          <p class="text-gray-700 leading-relaxed text-[1.05rem] mt-6 italic flex items-start gap-2">
+            <svg class="w-5 h-5 text-[#295d6a] mt-1" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12l2 2 4-4m1-6H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V9l-6-6z" />
+            </svg>
+            Car un site bien taillé, c’est bien plus qu’un outil : c’est une arme d’influence silencieuse. Et c’est exactement ce que nous faisons chez SPIDIA.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Calculateur de Prix -->
+    <section id="calculator" class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 text-gradient">Calculateur de Prix</h2>
+
+        <div class="bg-gray-50 rounded-2xl p-8 shadow-xl ring-1 ring-gray-200">
+          <div class="grid md:grid-cols-2 gap-10">
+            <!-- Configuration -->
+            <div class="space-y-8">
+              <h3 class="text-2xl font-semibold text-[#295d6a]">Configurez votre projet</h3>
+
+              <!-- Type de site -->
+              <div class="space-y-2 text-[#295d6a] border border-gray-200 p-4 rounded-xl bg-white/60">
+                <label for="siteType" class="block text-sm font-medium">Type de site web</label>
+                <select id="siteType" class="form-select text-[#295d6a] w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#295d6a]">
+                  <option value="vitrine" data-price="130000">Site vitrine (130 000 FCFA)</option>
+                  <option value="ecommerce" data-price="200000">E-commerce (200 000 FCFA)</option>
+                  <option value="blog" data-price="110000">Blog (110 000 FCFA)</option>
+                  <option value="Landing Page" data-price="100000">Landing Page (100 000 FCFA)</option>
+                </select>
+              </div>
+
+              <!-- Nombre de pages -->
+              <div class="space-y-2 text-[#295d6a] border border-gray-200 p-4 rounded-xl bg-white/60">
+                <label for="pageCount" class="block text-sm font-medium">Nombre de pages</label>
+                <input type="range" id="pageCount" min="1" max="30" value="1" class="w-full slider">
+                <div class="flex justify-between text-xs text-gray-500">
+                  <span>1 page</span>
+                  <span class="font-semibold text-[#295d6a]">
+                    <span id="pageCountValue">1</span> pages
+                  </span>
+                  <span>30 pages</span>
+                </div>
+                <p class="text-xs text-gray-500">15 000 FCFA par page après 5</p>
+              </div>
+
+              <!-- Fonctionnalités supplémentaires -->
+              <div class="space-y-2 text-[#295d6a] border border-gray-200 p-4 rounded-xl bg-white/60">
+                <label class="block text-sm font-medium">Fonctionnalités supplémentaires</label>
+                <div id="features-list" class="space-y-2">
+                  <label class="flex items-start gap-3 py-3 cursor-pointer hover:bg-gray-50 px-2 rounded-lg">
+                    <input type="checkbox" class="feature-checkbox mt-1 text-[#295d6a]" data-price="24900">
+                    <div class="flex-1">
+                      <span class="text-sm font-medium block">Formulaire</span>
+                      <span class="text-xs text-gray-500 block">Pour contacts rapides</span>
+                    </div>
+                    <span class="text-sm font-semibold text-[#295d6a]">24 900 FCFA</span>
+                  </label>
+                  <label class="flex items-start gap-3 py-3 cursor-pointer hover:bg-gray-50 px-2 rounded-lg">
+                    <input type="checkbox" class="feature-checkbox mt-1 text-[#295d6a]" data-price="19900">
+                    <div class="flex-1">
+                      <span class="text-sm font-medium block">WhatsApp</span>
+                      <span class="text-xs text-gray-500 block">Bouton de contact direct</span>
+                    </div>
+                    <span class="text-sm font-semibold text-[#295d6a]">19 900 FCFA</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Design et Livraison -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-[#295d6a] border border-gray-200 p-4 rounded-xl bg-white/60">
+                <!-- Design -->
+                <div class="space-y-2">
+                  <label for="designType" class="block text-sm font-medium">Design</label>
+                  <select id="designType" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#295d6a]">
+                    <option value="standard" data-price="0">Standard (inclus)</option>
+                    <option value="custom" data-price="19900">Sur mesure (+19 900 FCFA)</option>
+                    <option value="premium" data-price="29900">Premium (+29 900 FCFA)</option>
+                  </select>
+                </div>
+
+                <!-- Livraison -->
+                <div class="space-y-2">
+                  <label for="deliveryTime" class="block text-sm font-medium">Livraison</label>
+                  <select id="deliveryTime" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#295d6a]">
+                    <option value="standard" data-price="0">2 semaines (standard)</option>
+                    <option value="fast" data-price="29900">1 semaine (+29 900 FCFA)</option>
+                    <option value="urgent" data-price="49900">3-5 jours (+49 900 FCFA)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Estimation -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                      <h3 class="text-2xl font-semibold text-[#295d6a] mb-6">Estimation du projet</h3>
+                      <div class="space-y-4 text-sm">
+                        <div class="flex justify-between">
+                          <span>Type de site</span><span id="basePrice" class="font-bold">110 000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>Pages (<span id="pageCountDisplay">5</span>)</span><span id="pagePrice" class="font-bold">0 FCFA</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>Fonctionnalités</span><span id="featuresPrice" class="font-bold">0 FCFA</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>Design</span><span id="designPrice" class="font-bold">0 FCFA</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>Délai</span><span id="deliveryPrice" class="font-bold">0 FCFA</span>
+                        </div>
+                        <div class="bg-[#f1f5f9] p-4 rounded-xl mt-4">
+                          <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-[#295d6a]">Total estimé</span>
+                            <span id="totalPrice" class="text-2xl font-bold text-[#295d6a]">110 000 FCFA</span>
+                          </div>
+                          <p class="text-xs text-gray-500 mt-2">Estimation indicative - Devis final sur mesure</p>
+                        </div>
+                      </div>
+
+                      <button onclick="reporterConfigurationVersFormulaire()"
+                        class="magnetic-btn w-2/3 mx-auto mt-6 bg-[#295d6a] text-white py-2 px-4 rounded-xl hover:bg-[#21474e] transition-colors font-medium text-base">
+                        Valider la configuration
+                      </button>
+
+
+                      <p class="text-xs text-center text-gray-500 mt-3">Réponse sous 24h - Consultation gratuite</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="recapitulatif-prix" class="py-16 bg-[#f9fafb]">
+              <div class="max-w-4xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-[#295d6a] mb-6">Résumé de votre configuration</h2>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 space-y-4 text-[#295d6a] border border-gray-200">
+                  <p><strong>Type de site :</strong> <span id="recapSiteType">-</span></p>
+                  <p><strong>Nombre de pages :</strong> <span id="recapPageCount">-</span></p>
+                  <p><strong>Fonctionnalités :</strong> <span id="recapFeatures">Aucune</span></p>
+                  <p><strong>Design :</strong> <span id="recapDesign">-</span></p>
+                  <p><strong>Délai :</strong> <span id="recapDelivery">-</span></p>
+                  <p class="text-xl font-bold mt-4 border-t pt-4"><strong>Total :</strong> <span id="recapTotal">0 FCFA</span></p>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="py-24 section-bg relative overflow-hidden">
+      <!-- Creative Background Elements -->
+      <div class="absolute inset-0">
+        <div class="service-blob service-blob-1"></div>
+        <div class="service-blob service-blob-2"></div>
+        <div class="service-blob service-blob-3"></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 relative z-10">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-black text-white mb-6" data-aos="fade-up">
+            <span class="text-gradient-artistic">Ce que nous</span><br/>
+            <span class="text-outline">créons</span>
+          </h2>
+          <p class="text-xl text-gray-200 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Nos domaines d'expertise pour transformer vos idées en réalités digitales exceptionnelles
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-icon">
+              <i class="fas fa-desktop text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Sites vitrines</h3>
+            <p class="text-gray-200 leading-relaxed mb-6">Des expériences web immersives qui captivent vos visiteurs dès la première seconde et convertissent avec élégance.</p>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Design responsif premium</li>
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Optimisation SEO avancée</li>
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Animations sur mesure</li>
+            </ul>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-icon service-icon-accent">
+              <i class="fas fa-shopping-cart text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">E-commerce</h3>
+            <p class="text-gray-200 leading-relaxed mb-6">Boutiques en ligne haute performance qui transforment chaque visiteur en client fidèle grâce à une UX exceptionnelle.</p>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Paiement sécurisé</li>
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Gestion des stocks</li>
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Analytics avancés</li>
+            </ul>
+          </div>
+
+          <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-icon service-icon-special">
+              <i class="fas fa-palette text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Branding digital</h3>
+            <p class="text-gray-200 leading-relaxed mb-6">Identités visuelles uniques qui marquent les esprits et construisent une présence digitale mémorable.</p>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Logo & charte graphique</li>
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Stratégie de marque</li>
+              <li><i class="fas fa-check text-yellow-400 mr-2"></i>Assets créatifs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Amélioré -->
+    <section id="portfolio" class="py-24 section-bg">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 text-white" data-aos="fade-up">Nos Réalisations</h2>
+
+        <div class="grid md:grid-cols-2 gap-10" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Projet 1 -->
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition hover:scale-105">
+            <div class="p-6 text-[#295d6a] space-y-4">
+              <h4 class="text-2xl font-semibold">Site pour restaurant local</h4>
+              <p class="text-sm text-gray-600">Un restaurant en ligne moderne et élégante avec paiement sécurisé. Optimisée pour la conversion sur mobile et desktop.</p>
+
+              <div class="flex flex-col md:flex-row gap-4 mt-4">
+                <img src="c6d73947a00.png" alt="Apercu Desktop" class="rounded-lg w-full md:w-1/2 shadow">
+                <img src="Jla3P43tx11 (1).png" alt="Apercu Mobile" class="rounded-lg w-full md:w-1/2 shadow">
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2 -->
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition hover:scale-105">
+            <div class="p-6 text-[#295d6a] space-y-4">
+              <h4 class="text-2xl font-semibold">Artiste avangardiste</h4>
+              <p class="text-sm text-gray-600">Refonte complète pour un artiste incompris : branding, storytelling, performance et UX design repensés.</p>
+
+              <div class="flex flex-col md:flex-row gap-4 mt-4">
+                <img src="34d59e6b214.png" alt="Apercu Desktop" class="rounded-lg w-full md:w-1/2 shadow">
+                <img src="Jla3P43tx11.png" alt="Apercu Mobile" class="rounded-lg w-full md:w-1/2 shadow">
+              </div>
+            </div>
+          </div>
+
+          <!-- Tu peux ajouter d'autres projets ici -->
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Témoignages -->
+    <section id="temoignages" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 text-gradient" data-aos="fade-up">Ce qu'ils disent de nous</h2>
+        <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-gray-700 italic mb-4">"Client(e) satisfait(e)"</p>
+            <div class="flex items-center space-x-4">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">22 juil. 2025</p>
+                <p class="text-xs text-gray-500">« SPIDIA a complètement compris mes attentes. Mon site artistique est bien plus qu’un simple portfolio, c’est une expérience ! Les animations, la mise en page, tout respire la créativité. Je recommande les yeux fermés. »</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-gray-700 italic mb-4">"Client(e) satisfait(e)"</p>
+            <div class="flex items-center space-x-4">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">14 janvier 2025</p>
+                <p class="text-xs text-gray-500">« Franchement, je ne m'attendais pas à une qualité aussi pro pour un budget aussi raisonnable. Mon site vitrine est clair, fluide, et il a directement séduit mes premiers clients. Merci à l’équipe SPIDIA pour leur écoute et leur rigueur. »</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+            <p class="text-gray-700 italic mb-4">"Client(e) satisfait(e)"</p>
+            <div class="flex items-center space-x-4">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">12 Avril 2025</p>
+                <p class="text-xs text-gray-500">« J'avais peur de me lancer avec un prestataire à distance, mais SPIDIA m'a bluffée. Le site de mon salon de coiffure est magnifique, rapide et exactement comme je l'imaginais. Mention spéciale pour leur réactivité à chaque demande. »</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- – Présentation de l'équipe -->
+    <section class="bg-gray-50 py-12 md:py-20 px-4 md:px-6" id="equipe">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#295d6a] mb-6 md:mb-10">Derrière Spidia</h2>
+        <p class="text-gray-600 mb-8 md:mb-12 text-base md:text-lg">Derrière Spidia se cache un developpeur passionnés, doué d'une volonté de créer des expériences web élégantes, intuitives et puissantes. Chaque projet est pour moi une nouvelle œuvre d'art digitale.</p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+          <div class="text-center">
+            <h3 class="text-lg font-semibold text-[#185768]">Essoham T.</h3>
+            <p class="text-sm text-gray-500">Fondateur & Lead Designer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-gray-50 py-24 px-4 sm:px-8 lg:px-24" id="faq">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-left text-[#295d6a] mb-12">Foire aux questions</h2>
+
+        <div class="space-y-6">
+
+          <!-- FAQ item -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <button class="faq-toggle w-full flex justify-between items-center px-6 py-5 text-[#185768] font-semibold text-lg">
+              <span>Quels sont les délais de création d'un site ?</span>
+              <svg class="h-6 w-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path class="faq-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+            <div class="faq-content px-6 py-4 text-gray-600 hidden">
+              Nos projets prennent en général entre 3 jours et 3 semaines selon la complexité du site.
+            </div>
+          </div>
+
+          <!-- FAQ item -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <button class="faq-toggle w-full flex justify-between items-center px-6 py-5 text-[#185768] font-semibold text-lg">
+              <span>Proposez-vous des paiements en plusieurs fois ?</span>
+              <svg class="h-6 w-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path class="faq-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+            <div class="faq-content px-6 py-4 text-gray-600 hidden">
+              Oui, nous proposons des options de paiement flexibles pour faciliter votre investissement.
+            </div>
+          </div>
+
+          <!-- FAQ item -->
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <button class="faq-toggle w-full flex justify-between items-center px-6 py-5 text-[#185768] font-semibold text-lg">
+              <span>Puis-je modifier mon site moi-même après livraison ?</span>
+              <svg class="h-6 w-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path class="faq-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+            <div class="faq-content px-6 py-4 text-gray-600 hidden">
+              Bien sûr ! Nous vous donnons les accès nécessaires et, si vous le souhaitez, une courte formation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll('.faq-toggle').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('svg');
+
+          const isOpen = !content.classList.contains('hidden');
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle svg').forEach(i => {
+            i.classList.remove('rotate-45');
+          });
+
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-45'); // rotation pour indiquer "fermer"
+          }
+        });
+      });
+    </script>
+
+    <!-- Appel à l'action -->
+    <section class="bg-[#185768] text-white py-12 md:py-16 px-4 md:px-6 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">Prêt à offrir un costume digital sur-mesure à votre marque ?</h2>
+        <p class="text-base md:text-lg mb-6 md:mb-8">Rejoignez les marques ambitieuses qui ont déjà fait confiance à Spidea pour sublimer leur présence en ligne.</p>
+        <a href="#contact" class="bg-white text-[#185768] font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-gray-100 transition duration-300 text-sm md:text-base">Discutons de votre projet</a>
+      </div>
+    </section>
+
+      <!-- Contact -->
+      <section id="contact" class="bg-gray-50 py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-[#295d6a]">Parlons de votre projet</h2>
+            <p class="mt-4 text-gray-600 text-lg">Remplissez ce formulaire et nous vous recontacterons rapidement.</p>
+          </div>
+          <form onsubmit="envoyerVersWhatsApp(event)" class="grid grid-cols-1 gap-6 bg-white p-8 rounded-xl shadow-md">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+              <input id="nom" type="text" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#295d6a] text-[#295d6a]" placeholder="Votre nom" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input id="email" type="email" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#295d6a] text-[#295d6a]" placeholder="Votre email" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+              <input id="telephone" type="tel" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#295d6a] text-[#295d6a]" placeholder="+229..." />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Nom de l’entreprise</label>
+              <input id="entreprise" type="text" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#295d6a] text-[#295d6a]" placeholder="Nom de votre entreprise" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea id="message" rows="5" class="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#295d6a] text-[#295d6a]" placeholder="Parlez-nous de votre projet..."></textarea>
+            </div>
+            <div class="text-center">
+              <button id="whatsapp-submit" type="submit" onclick="envoyerWhatsApp()" class="bg-[#295d6a] text-white font-semibold px-8 py-3 rounded-md hover:bg-[#185768] transition duration-300" disabled>
+                Envoyer via WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Script WhatsApp -->
+      <script>
+        function envoyerVersWhatsApp(e) {
+          e.preventDefault();
+
+          const nom = document.getElementById("nom").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const telephone = document.getElementById("telephone").value.trim();
+          const entreprise = document.getElementById("entreprise").value.trim();
+          const message = document.getElementById("message").value.trim();
+
+          const texte = `Bonjour, je suis ${nom} (%0AEmail : ${email}, %0ATéléphone : ${telephone}, %0AEntreprise : ${entreprise}) et j'aimerais discuter de mon projet : %0A%0A${message}`;
+          const numero = "22951252514"; // Ton numéro
+
+          const lien = `https://wa.me/${numero}?text=${encodeURIComponent(texte)}`;
+          window.open(lien, "_blank");
+        }
+      </script>
+
+
+    <!-- Footer -->
+    <footer class="bg-brown-dark text-brown-light py-12 mt-24">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+
+        <!-- Nom / Description -->
+        <div class="text-center md:text-left">
+          <h3 class="text-lg font-semibold text-white mb-2">SPIDIA</h3>
+          <p class="text-brown-light/80">
+            Agence de création de sites modernes, rapides et élégants pour entreprises ambitieuses.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="text-center">
+          <h4 class="text-md font-semibold text-white mb-2">Navigation</h4>
+          <ul class="space-y-1">
+            <li><a href="#home" class="hover:text-white transition-colors">Accueil</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition-colors">Réalisations</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact / Réseaux -->
+        <div class="text-center md:text-right">
+          <h4 class="text-md font-semibold text-white mb-2">Nous contacter</h4>
+          <p class="text-brown-light/80 mb-2">contact@spidia.dev</p>
+          <div class="flex justify-center md:justify-end gap-4 mt-2">
+            <a href="#" class="hover:text-brown-light transition" aria-label="WhatsApp">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M..." /> <!-- Remplace "M..." par ton SVG réel si besoin -->
+              </svg>
+            </a>
+            <a href="#" class="hover:text-brown-light transition" aria-label="Instagram">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M..." />
+              </svg>
+            </a>
+            <a href="#" class="hover:text-brown-light transition" aria-label="LinkedIn">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M..." />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bas de footer -->
+      <div class="border-t border-brown-medium/50 mt-10 pt-6 text-center text-xs text-brown-light/70">
+        &copy; 2025 SPIDIA. Tous droits réservés.
+      </div>
+    </footer>
+
+    <script>
+      const siteType = document.getElementById("siteType");
+      const pageCount = document.getElementById("pageCount");
+      const pageCountValue = document.getElementById("pageCountValue");
+      const pageCountDisplay = document.getElementById("pageCountDisplay");
+      const designType = document.getElementById("designType");
+      const deliveryTime = document.getElementById("deliveryTime");
+      const featureCheckboxes = document.getElementsByClassName("feature-checkbox");
+
+      const basePriceSpan = document.getElementById("basePrice");
+      const pagePriceSpan = document.getElementById("pagePrice");
+      const designPriceSpan = document.getElementById("designPrice");
+      const deliveryPriceSpan = document.getElementById("deliveryPrice");
+      const featuresPriceSpan = document.getElementById("featuresPrice");
+      const totalPriceSpan = document.getElementById("totalPrice");
+
+      function formatPrice(value) {
+        return Number(value).toLocaleString("fr-FR") + " FCFA";
+      }
+
+      function updateCalculator() {
+        const basePrice = parseInt(siteType.selectedOptions[0].dataset.price);
+        const pages = parseInt(pageCount.value);
+        const extraPages = Math.max(0, pages - 5);
+        const pricePerExtraPage = 15000;
+        const pagePrice = extraPages * pricePerExtraPage;
+
+        const designPrice = parseInt(designType.selectedOptions[0].dataset.price);
+        const deliveryPrice = parseInt(deliveryTime.selectedOptions[0].dataset.price);
+
+        let featuresPrice = 0;
+        Array.from(featureCheckboxes).forEach(checkbox => {
+          if (checkbox.checked) {
+            featuresPrice += parseInt(checkbox.dataset.price || 0);
+          }
+        });
+
+        const totalPrice = basePrice + pagePrice + designPrice + deliveryPrice + featuresPrice;
+
+        pageCountValue.textContent = pages;
+        pageCountDisplay.textContent = pages;
+
+        basePriceSpan.textContent = formatPrice(basePrice);
+        pagePriceSpan.textContent = formatPrice(pagePrice);
+        designPriceSpan.textContent = formatPrice(designPrice);
+        deliveryPriceSpan.textContent = formatPrice(deliveryPrice);
+        featuresPriceSpan.textContent = formatPrice(featuresPrice);
+        totalPriceSpan.textContent = formatPrice(totalPrice);
+
+        updateRecapitulatif();
+      }
+
+      siteType.addEventListener("change", updateCalculator);
+      pageCount.addEventListener("input", updateCalculator);
+      designType.addEventListener("change", updateCalculator);
+      deliveryTime.addEventListener("change", updateCalculator);
+      Array.from(featureCheckboxes).forEach(cb => cb.addEventListener("change", updateCalculator));
+
+      updateCalculator();
+    </script>
+
+    <script>
+      AOS.init({ once: true });
+    </script>
+
+    <script>
+      const burgerBtn = document.getElementById('burger-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      burgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+
+    <script>
+      window.addEventListener('scroll', () => {
+        const scroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (scroll / height) * 100;
+        document.getElementById('scroll-progress').style.width = scrolled + "%";
+      });
+    </script>
+
+    <script>
+
+       const siteType = document.getElementById("siteType");
+        const pageCount = document.getElementById("pageCount");
+        const pageCountValue = document.getElementById("pageCountValue");
+        const pageCountDisplay = document.getElementById("pageCountDisplay");
+        const designType = document.getElementById("designType");
+        const deliveryTime = document.getElementById("deliveryTime");
+        const featureCheckboxes = document.getElementsByClassName("feature-checkbox");
+
+        const basePriceSpan = document.getElementById("basePrice");
+        const pagePriceSpan = document.getElementById("pagePrice");
+        const designPriceSpan = document.getElementById("designPrice");
+        const deliveryPriceSpan = document.getElementById("deliveryPrice");
+        const featuresPriceSpan = document.getElementById("featuresPrice");
+        const totalPriceSpan = document.getElementById("totalPrice");
+
+        function formatPrice(value) {
+          return Number(value).toLocaleString("fr-FR") + " FCFA";
+        }
+
+        function updateCalculator() {
+          const basePrice = parseInt(siteType.selectedOptions[0].dataset.price);
+          const pages = parseInt(pageCount.value);
+          const extraPages = Math.max(0, pages - 5);
+          const pricePerExtraPage = 15000;
+          const pagePrice = extraPages * pricePerExtraPage;
+
+          const designPrice = parseInt(designType.selectedOptions[0].dataset.price);
+          const deliveryPrice = parseInt(deliveryTime.selectedOptions[0].dataset.price);
+
+          let featuresPrice = 0;
+          Array.from(featureCheckboxes).forEach(checkbox => {
+            if (checkbox.checked) {
+              featuresPrice += parseInt(checkbox.dataset.price || 0);
+            }
+          });
+
+          const totalPrice = basePrice + pagePrice + designPrice + deliveryPrice + featuresPrice;
+
+          pageCountValue.textContent = pages;
+          pageCountDisplay.textContent = pages;
+
+          basePriceSpan.textContent = formatPrice(basePrice);
+          pagePriceSpan.textContent = formatPrice(pagePrice);
+          designPriceSpan.textContent = formatPrice(designPrice);
+          deliveryPriceSpan.textContent = formatPrice(deliveryPrice);
+          featuresPriceSpan.textContent = formatPrice(featuresPrice);
+          totalPriceSpan.textContent = formatPrice(totalPrice);
+
+          updateRecapitulatif();
+        }
+
+        siteType.addEventListener("change", updateCalculator);
+        pageCount.addEventListener("input", updateCalculator);
+        designType.addEventListener("change", updateCalculator);
+        deliveryTime.addEventListener("change", updateCalculator);
+        Array.from(featureCheckboxes).forEach(cb => cb.addEventListener("change", updateCalculator));
+
+        updateCalculator();
+      </script>
+
+      <script>
+        function updateRecapitulatif() {
+          const siteType = document.getElementById('siteType');
+          const pageCount = document.getElementById('pageCount');
+          const designType = document.getElementById('designType');
+          const deliveryTime = document.getElementById('deliveryTime');
+          const featureCheckboxes = document.querySelectorAll('.feature-checkbox');
+
+          const selectedSite = siteType.options[siteType.selectedIndex].text;
+          const selectedPages = pageCount.value;
+          const selectedDesign = designType.options[designType.selectedIndex].text;
+          const selectedDelivery = deliveryTime.options[deliveryTime.selectedIndex].text;
+
+          let selectedFeatures = [];
+          featureCheckboxes.forEach(cb => {
+            if (cb.checked) {
+              const label = cb.closest('label').querySelector('span.text-sm');
+              selectedFeatures.push(label?.innerText || 'Fonction');
+            }
+          });
+
+          const recapSite = document.getElementById('recapSiteType');
+          const recapPages = document.getElementById('recapPageCount');
+          const recapDesign = document.getElementById('recapDesign');
+          const recapDelivery = document.getElementById('recapDelivery');
+          const recapFeatures = document.getElementById('recapFeatures');
+          const recapTotal = document.getElementById('recapTotal');
+
+          if (recapSite) recapSite.textContent = selectedSite;
+          if (recapPages) recapPages.textContent = selectedPages + ' pages';
+          if (recapDesign) recapDesign.textContent = selectedDesign;
+          if (recapDelivery) recapDelivery.textContent = selectedDelivery;
+          if (recapFeatures) recapFeatures.textContent = selectedFeatures.length > 0 ? selectedFeatures.join(', ') : 'Aucune';
+
+          const totalText = document.getElementById('totalPrice');
+          if (totalText && recapTotal) {
+            recapTotal.textContent = totalText.textContent;
+          }
+        }
+
+    </script>
+
+    <script>
+      function verifierChampsFormulaire() {
+        const nom = document.getElementById('nom')?.value.trim();
+        const email = document.getElementById('email')?.value.trim();
+        const telephone = document.getElementById('telephone')?.value.trim();
+        const entreprise = document.getElementById('entreprise')?.value.trim();
+        const message = document.getElementById('message')?.value.trim();
+        const bouton = document.getElementById('whatsapp-submit');
+
+        const tousRemplis = [nom, email, telephone, entreprise, message].every(champ => champ && champ.length >= 2);
+
+        if (bouton) {
+          bouton.disabled = !tousRemplis;
+          bouton.classList.toggle("opacity-50", !tousRemplis);
+          bouton.classList.toggle("cursor-not-allowed", !tousRemplis);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        ['nom', 'email', 'telephone', 'entreprise', 'message'].forEach(id => {
+          const champ = document.getElementById(id);
+          if (champ) {
+            champ.addEventListener('input', verifierChampsFormulaire);
+          }
+        });
+
+        verifierChampsFormulaire();
+      });
+    </script>
+
+<script>
+
+  function envoyerWhatsApp() {
+    const nom = document.getElementById('nom')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const telephone = document.getElementById('telephone')?.value.trim();
+    const entreprise = document.getElementById('entreprise')?.value.trim();
+    const message = document.getElementById('message')?.value.trim();
+
+    if (!nom || !email || !telephone || !entreprise || !message) {
+      alert("Veuillez remplir tous les champs avant d'envoyer votre message.");
+      return;
+    }
+
+    // Construction du message avec des phrases naturelles
+    const texteFinal = `
+  Bonjour, je m'appelle ${nom}. Voici mon email : ${email}, mon numéro : ${telephone}, et le nom de mon entreprise est "${entreprise}".
+
+  Voici la configuration de mon site :
+  ${message}
+
+  Pouvons-nous en discuter plus en profondeur ?
+    `.trim();
+
+    const numeroWhatsApp = "22951252514";
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texteFinal)}`;
+
+    window.open(url, '_blank');
+  }
+
+
+
+</script>
+<script>
+
+  function reporterConfigurationVersFormulaire() {
+    const siteType = document.getElementById('siteType');
+    const pageCount = document.getElementById('pageCount');
+    const designType = document.getElementById('designType');
+    const deliveryTime = document.getElementById('deliveryTime');
+    const features = document.querySelectorAll('.feature-checkbox');
+
+    const selectedSite = siteType.options[siteType.selectedIndex].text;
+    const selectedPages = pageCount.value;
+    const selectedDesign = designType.options[designType.selectedIndex].text;
+    const selectedDelivery = deliveryTime.options[deliveryTime.selectedIndex].text;
+
+    let selectedFeatures = [];
+    features.forEach(f => {
+      if (f.checked) {
+        const label = f.closest('label').querySelector('span.text-sm');
+        selectedFeatures.push(label?.innerText || "Fonctionnalité");
+      }
+    });
+
+    let resume = `🧩 Configuration du site :\n`;
+    resume += `• Type de site : ${selectedSite}\n`;
+    resume += `• Nombre de pages : ${selectedPages}\n`;
+    resume += `• Design : ${selectedDesign}\n`;
+    resume += `• Délai de livraison : ${selectedDelivery}\n`;
+    if (selectedFeatures.length > 0) {
+      resume += `• Fonctionnalités : ${selectedFeatures.join(', ')}\n`;
+    }
+
+    // Ajout du prix total dans le message
+    const total = document.getElementById('totalPrice')?.textContent;
+    if (total) {
+      resume += `• Coût total estimé : ${total}`;
+    }
+
+    const messageTextarea = document.getElementById('message');
+    if (messageTextarea) {
+      messageTextarea.value = resume;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      alert("Impossible de remplir le formulaire. Vérifie que l'ID 'message' existe.");
+    }
+  }
+
+
+</script>  
+
+    <script>
+      function checkLandingPageOption() {
+        const isLandingPage = siteType.value === "Landing Page";
+        const pageSection = document.getElementById('pageCount');
+
+        if (isLandingPage) {
+          pageCount.value = 1;
+          pageCount.disabled = true;
+          pageCountValue.textContent = "1";
+          pageCountDisplay.textContent = "1";
+        } else {
+          pageCount.disabled = false;
+        }
+      }
+
+      siteType.addEventListener("change", () => {
+        checkLandingPageOption();
+        updateCalculator();
+      });
+
+      // Appel initial
+      checkLandingPageOption();
+    </script>
+
+    <script>
+      // Texte dynamique du Hero
+      const words = ["impactantes", "fluides", "visuelles", "premium", "inoubliables"];
+      let index = 0;
+      const dynamicWord = document.getElementById("dynamic-word");
+      setInterval(() => {
+        index = (index + 1) % words.length;
+        dynamicWord.textContent = words[index];
+      }, 3000);
+
+      // Retrait de l’écran d’intro
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.classList.add("opacity-0", "transition", "duration-1000");
+          setTimeout(() => preloader.remove(), 1000);
+        }
+      });
+    </script>
+
+
+  </body>
+</html>
